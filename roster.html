@@ -4,12 +4,31 @@ title: Roster
 
 <h1>{{ page.title }}</h1>
 
-<ul>
-  {% for player in site.players %}
-  <li class="{{ player.class }}">
-    <h2>{{ player.name }}</h2>
-    <h3>{{ player.role }}</h3>
-    <p>{{ player.rank}}</p>
-  </li>
-  {% endfor %}
-</ul>
+<section class="players">
+  <div class="container">
+    <h2>Leadership</h2>
+    <ul>
+      {% for player in site.players %}
+        {% if player.rank == 'Officer' %}
+          <li class="{{ player.class }}">
+            <h3>{{ player.name }}</h3>
+            <p>{{ player.role }}</p>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="container">
+    <h2>Raiders</h2>
+    <ul>
+      {% for player in site.players %}
+        {% if player.rank == 'Raider' %}
+          <li class="{{ player.class }}">
+            <h3>{{ player.name }}</h3>
+            <p>{{ player.role }}</p>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</section>

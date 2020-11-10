@@ -1,0 +1,15 @@
+---
+title: Roster
+---
+
+<h1>{{ page.title }}</h1>
+
+<ul>
+  {% for player in site.players %}
+  <li class="{{ player.class }}">
+    <h2>{{ player.name }}</h2>
+    <h3>{{ player.role }}</h3>
+    <p>{{ player.rank}}</p>
+  </li>
+  {% endfor %}
+</ul>
